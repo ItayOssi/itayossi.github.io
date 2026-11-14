@@ -16,5 +16,5 @@
   <path d="M19.5 27.5c3.5 0 6.6.8 9 2M19.5 32.5c3.5 0 6.6.8 9 2M19.5 37.5c3.5 0 6.6.8 9 2" stroke="#9cbdf3" stroke-width="1.8" stroke-linecap="round" fill="none"/>
   <!-- the summary: a spark rising out of the book -->
   <path d="M41.5 9.5l1.9 4.6 4.6 1.9-4.6 1.9-1.9 4.6-1.9-4.6-4.6-1.9 4.6-1.9z" fill="url(#gold)"/>
-  <circle cx="50.5" cy="23" r="1.6" fill="#ffd76a"/>
+  <circle cx="51" cy="11" r="1.6" fill="#ffd76a"/>
 </svg>
