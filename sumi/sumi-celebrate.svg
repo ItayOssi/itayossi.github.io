@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 340" role="img" aria-label="Sumi, the SumIT mascot">
+<style>
+.ink  { stroke: #2a2522; stroke-width: 5.5; stroke-linejoin: round; stroke-linecap: round; }
+    .thin { stroke: #2a2522; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+    .nf   { fill: none; }
+    .shade { fill: #2a2522; opacity: .14; }
+    .skin { fill: #f6d8b4; }
+
+.sway   { transform-origin: 130px 330px; }
+.head   { transform-origin: 130px 176px; }
+.tassel { animation: tassel 1.6s ease-in-out infinite; transform-origin: 188px 66px; }
+.eyes   { animation: blink 4.6s infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes tassel { 0%,100% { transform: rotate(-10deg) } 50% { transform: rotate(12deg) } }
+@keyframes blink  { 0%,92%,100% { transform: scaleY(1) } 95% { transform: scaleY(.12) } }
+
+.sway { animation: jump .9s cubic-bezier(.3,.7,.4,1) infinite; }
+.shadow { animation: shrink .9s cubic-bezier(.3,.7,.4,1) infinite; transform-box: fill-box; transform-origin: center; }
+.pumpL { animation: pumpL .45s ease-in-out infinite alternate; transform-origin: 100px 194px; }
+.pumpR { animation: pumpR .45s ease-in-out infinite alternate; transform-origin: 160px 194px; }
+.c { animation: fall 1.8s linear infinite; transform-box: fill-box; transform-origin: center; }
+.c:nth-child(2n) { animation-duration: 2.3s; } .c:nth-child(3n) { animation-delay: -.8s; } .c:nth-child(4n) { animation-delay: -1.4s; }
+@keyframes jump { 0%,100% { transform: translateY(0) scaleY(.97) } 45% { transform: translateY(-18px) scaleY(1.02) } }
+@keyframes shrink { 0%,100% { transform: scaleX(1); opacity: .18 } 45% { transform: scaleX(.75); opacity: .1 } }
+@keyframes pumpL { from { transform: rotate(4deg) } to { transform: rotate(-6deg) } }
+@keyframes pumpR { from { transform: rotate(-4deg) } to { transform: rotate(6deg) } }
+@keyframes fall { from { transform: translateY(-40px) rotate(0) } to { transform: translateY(340px) rotate(540deg) } }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+</style>
+<defs>
+    <!-- old-print grain over the colours -->
+    <filter id="paper" filterUnits="userSpaceOnUse" x="0" y="0" width="260" height="340">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 .17  0 0 0 0 .14  0 0 0 0 .12  0 0 0 1.3 -.86" result="g"/>
+      <feComposite in="g" in2="SourceGraphic" operator="in" result="grain"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="grain"/></feMerge>
+    </filter>
+    <clipPath id="headClip"><path d="M78 112 Q78 54 130 54 Q182 54 182 114 Q182 150 160 166 Q130 182 100 166 Q78 150 78 112 Z"/></clipPath>
+    <clipPath id="gownClip"><path d="M96 182 Q86 226 84 276 Q130 286 176 276 Q174 226 164 182 Z"/></clipPath>
+  </defs>
+<ellipse class="shadow" cx="130" cy="330" rx="74" ry="8" fill="#2a2522" opacity=".18"/><g><rect class="c" x="20" y="0" width="7" height="11" rx="1.5" fill="#e6bd64" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="60" y="-30" width="7" height="11" rx="1.5" fill="#cc6358" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="98" y="-10" width="7" height="11" rx="1.5" fill="#7a9cc8" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="140" y="-40" width="7" height="11" rx="1.5" fill="#e6bd64" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="176" y="-5" width="7" height="11" rx="1.5" fill="#cc6358" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="214" y="-25" width="7" height="11" rx="1.5" fill="#7a9cc8" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="238" y="10" width="7" height="11" rx="1.5" fill="#e6bd64" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="40" y="-60" width="7" height="11" rx="1.5" fill="#7a9cc8" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="120" y="-70" width="7" height="11" rx="1.5" fill="#cc6358" stroke="#2a2522" stroke-width="1.5"/><rect class="c" x="196" y="-60" width="7" height="11" rx="1.5" fill="#e6bd64" stroke="#2a2522" stroke-width="1.5"/></g><g class="sway" filter="url(#paper)">
+<!-- trousers, one leg cocked out -->
+    <path class="ink" d="M110 262 L106 316 L126 316 L130 264 Z" fill="#4f5361"/>
+    <path class="ink" d="M130 264 L146 313 L166 309 L152 262 Z" fill="#4f5361"/>
+    <path class="shade" d="M120 266 L118 314 L125 314 L129 266 Z"/>
+    <path class="shade" d="M146 266 L158 311 L164 310 L151 265 Z"/>
+    <!-- two-tone shoes -->
+    <path class="ink" d="M88 328 Q88 313 106 312 L126 312 Q132 320 129 328 Z" fill="#f0e6cf"/>
+    <path class="ink" d="M88 328 Q88 314 102 313 L106 328 Z" fill="#2a2522" stroke-width="3.5"/>
+    <path class="ink" d="M143 325 Q140 315 146 310 L164 306 Q186 305 188 320 L188 323 Z" fill="#f0e6cf"/>
+    <path class="ink" d="M173 306 Q188 306 188 321 L179 323 Z" fill="#2a2522" stroke-width="3.5"/>
+    <path d="M110 318 Q116 316 122 318 M152 314 Q158 311 164 312" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".8"/>
+
+    <!-- the gown, cut slim and knee-length -->
+    <path class="ink" d="M96 182 Q86 226 84 276 Q130 286 176 276 Q174 226 164 182 Z" fill="#5c80b0"/>
+    <g clip-path="url(#gownClip)">
+      <path class="shade" d="M150 180 L180 180 L180 290 L156 290 Q160 230 150 180 Z"/>
+    </g>
+    <!-- pinstripe suit, shirt and tie -->
+    <path class="ink" d="M110 178 L150 178 Q156 220 156 268 Q130 274 104 268 Q104 220 110 178 Z" fill="#5a5f6e"/>
+    <path d="M116 206 L114 266 M123 214 L122 270 M137 214 L138 270 M144 206 L146 266" stroke="#7a8094" stroke-width="1.6" stroke-linecap="round"/>
+    <path class="shade" d="M116 214 L130 226 L144 214 L146 232 Q130 240 114 232 Z"/>
+    <path class="ink" d="M116 176 L130 204 L144 176 Z" fill="#f0e6cf" stroke-width="4"/>
+    <path class="thin" d="M125 182 L135 182 L138 206 L130 216 L122 206 Z" fill="#cc6358"/>
+    <path d="M124 190 L136 186 M123 198 L137 193 M123 205 L137 200" stroke="#e6bd64" stroke-width="2" stroke-linecap="round"/>
+    <path class="thin" d="M125 182 L135 182 L133 175 L127 175 Z" fill="#cc6358"/>
+    <path class="thin nf" d="M110 178 L124 218 L130 214 M150 178 L136 218 L130 214"/>
+    <circle cx="130" cy="236" r="2.8" fill="#2a2522"/>
+    <circle cx="130" cy="252" r="2.8" fill="#2a2522"/>
+    <!-- gown fronts with the gold stole on their edges -->
+    <path class="ink" d="M96 182 Q88 226 86 276 L106 278 Q104 226 114 180 Z" fill="#5c80b0"/>
+    <path class="ink" d="M164 182 Q172 226 174 276 L154 278 Q156 226 146 180 Z" fill="#5c80b0"/>
+    <path class="shade" d="M166 190 Q172 230 172 274 L164 276 Q166 230 160 188 Z"/>
+    <path d="M113 182 Q104 228 106 276" stroke="#2a2522" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M113 182 Q104 228 106 276" stroke="#e6bd64" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+    <path d="M147 182 Q156 228 154 276" stroke="#2a2522" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M147 182 Q156 228 154 276" stroke="#e6bd64" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+    <path d="M149 190 Q156 230 155 272" stroke="#c49a45" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- the SumIT spark pinned on the stole -->
+    <path d="M153 212l2.6 6.2 6.2 2.6-6.2 2.6-2.6 6.2-2.6-6.2-6.2-2.6 6.2-2.6z" fill="#f6efdc" stroke="#2a2522" stroke-width="2.2" stroke-linejoin="round"/>
+
+    <g class="head"><!-- neck -->
+    <path class="ink skin" d="M116 158 L116 176 Q130 182 144 176 L144 158" stroke-width="4.5"/>
+    <path class="shade" d="M117 160 L143 160 L143 170 Q130 166 117 172 Z"/>
+
+    <!-- ears -->
+    <circle class="ink skin" cx="77" cy="120" r="12" stroke-width="4.5"/>
+    <circle class="ink skin" cx="183" cy="120" r="12" stroke-width="4.5"/>
+    <path class="thin nf" d="M74 116 Q80 120 75 126 M186 116 Q180 120 185 126"/>
+
+    <!-- head with a strong cartoon chin -->
+    <path class="ink skin" d="M78 112 Q78 54 130 54 Q182 54 182 114 Q182 150 160 166 Q130 182 100 166 Q78 150 78 112 Z"/>
+    <g clip-path="url(#headClip)">
+      <path class="shade" d="M158 66 Q184 86 184 114 Q184 152 160 168 Q146 176 132 180 Q164 158 168 124 Q171 94 158 66 Z"/>
+      <path class="shade" d="M70 98 Q130 74 190 96 L190 104 Q130 84 70 108 Z"/>
+    </g>
+
+    <!-- slicked hair under the cap -->
+    <path class="ink" d="M80 106 Q78 66 104 62 L158 62 Q182 68 181 102 Q176 86 160 80 Q140 74 122 82 Q106 78 94 86 Q84 92 80 106 Z" fill="#a0583a"/>
+    <path class="thin" d="M100 82 Q86 94 96 104 Q94 94 108 88 Z" fill="#a0583a"/>
+    <path d="M114 72 Q132 66 154 72" stroke="#c47c55" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M164 80 Q176 86 179 98" stroke="#7e4429" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- the cap, tilted at a cocky angle -->
+    <g transform="translate(0 -12) rotate(-9 130 70)">
+      <path class="ink" d="M96 70 L96 86 Q130 100 164 86 L164 70 Z" fill="#3b4258"/>
+      <path class="ink" d="M66 64 L130 42 L194 64 L130 86 Z" fill="#475070"/>
+      <path d="M130 86 L194 64 L186 61 L130 80 Z" fill="#2a2522" opacity=".22"/>
+      <path d="M80 64 L130 47 L180 64" stroke="#626b8a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle class="thin" cx="130" cy="64" r="4.5" fill="#e6bd64"/>
+      <path d="M130 64 L188 66" stroke="#e6bd64" stroke-width="3.8" stroke-linecap="round"/>
+      <g class="tassel">
+        <path d="M188 66 L190 90" stroke="#e6bd64" stroke-width="3.8" stroke-linecap="round"/>
+        <path class="thin" d="M184 88 L196 88 L199 106 Q190 110 181 106 Z" fill="#e6bd64"/>
+        <path d="M186 96 L185 104 M190 96 L190 106 M194 96 L195 104" stroke="#b48a38" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <path class="ink nf" d="M94 97 Q106 89 120 96" stroke-width="6"/>
+    <path class="ink nf" d="M142 93 Q155 83 168 93" stroke-width="6"/>
+    <g class="eyes">
+      <ellipse class="thin" cx="107" cy="117" rx="10" ry="12.5" fill="#f6efdc" stroke-width="3.5"/>
+      <ellipse class="thin" cx="154" cy="115" rx="10" ry="13" fill="#f6efdc" stroke-width="3.5"/>
+      <g class="look" transform="translate(0 0)">
+        <circle cx="108" cy="118" r="5.4" fill="#2a2522"/><circle cx="155" cy="116" r="5.6" fill="#2a2522"/>
+        <circle cx="109.8" cy="116" r="1.8" fill="#fff"/><circle cx="156.8" cy="114" r="1.9" fill="#fff"/>
+      </g>
+    </g>
+    <!-- nose -->
+    <path class="ink nf" d="M130 118 Q142 128 131 134" stroke-width="4"/>
+    <path d="M104 140 Q130 148 162 136 Q158 168 132 169 Q108 167 104 140 Z" fill="#7a2e2a"/>
+    <path d="M106 141.5 Q130 149.5 160 137.5 L158.5 146 Q130 155 108 149 Z" fill="#f6efdc"/>
+    <path d="M117 161 Q132 152 148 160 Q133 169 117 161 Z" fill="#cc6358"/>
+    <path class="ink nf" d="M104 140 Q130 148 162 136 Q158 168 132 169 Q108 167 104 140 Z" stroke-width="4"/>
+    <path class="thin nf" d="M162 136 Q169 134 169 128 M104 140 Q97 138 97 132"/></g>
+<!-- fist pumped up -->
+    <g class="pumpL"><path d="M100 194 L58 184 L62 144" stroke="#2a2522" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M100 194 L58 184 L62 144" stroke="#5c80b0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M94 191 L64 184" stroke="#7a9cc8" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M85 194.6 L87 186.8 M77 192.7 L79 184.9" stroke="#e6bd64" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M55 149 L69 151" stroke="#2a2522" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M55 149 L69 151" stroke="#f0e6cf" stroke-width="5" stroke-linecap="round" fill="none"/><g transform="translate(62 120) rotate(-31)"><!-- the fist as one shape (thumb included); only inner lines on top -->
+        <path class="ink skin" d="M-18 19 Q-24 4 -21 -10 Q-20 -21 -8 -21 L4 -20.5 Q10 -19.5 9 -14 Q14 -12 13 -8 Q16 -4.5 12.5 -1.5 Q16 2.5 12.5 6 Q15.5 10 11.5 13.5 Q13 20 5 21 Q-8 23.5 -18 19 Z" stroke-width="4.5"/>
+        <path class="thin nf" d="M-13 -8 Q-3 -14 9 -14" stroke-width="2.8"/>
+        <path class="thin nf" d="M-1 -2 Q6 -1 12.5 -1.5 M-1 4.5 Q6 5.5 12.5 6 M0 11 Q6 12.5 11.5 13.5" stroke-width="2.4"/>
+        <path class="shade" d="M-18 8 Q-16 16 -8 18.5 Q2 19.5 8 18 Q0 21.5 -12 20 Q-18 17 -18 8 Z"/>
+</g></g>
+<!-- diploma raised high -->
+    <g class="pumpR"><path d="M160 194 L200 178 L214 142" stroke="#2a2522" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M160 194 L200 178 L214 142" stroke="#5c80b0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M166 202 L198 188" stroke="#4a6c9c" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M170.5 185.3 L173.5 192.7 M178.5 182.3 L181.5 189.7" stroke="#e6bd64" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M205.5 143.5 L218.5 148.5" stroke="#2a2522" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M205.5 143.5 L218.5 148.5" stroke="#f0e6cf" stroke-width="5" stroke-linecap="round" fill="none"/><g transform="translate(221 116) rotate(-15)"><!-- the scroll, standing up in the fist -->
+        <rect class="ink" x="-8.5" y="-64" width="17" height="94" rx="8.5" fill="#f3e6c4" stroke-width="4"/>
+        <ellipse class="thin" cx="0" cy="-60" rx="8.5" ry="4.5" fill="#e3d2a6"/>
+        <rect x="-8.5" y="-42" width="17" height="7" fill="#cc6358"/>
+        <path class="thin nf" d="M-8.5 -42 H8.5 M-8.5 -35 H8.5" stroke-width="2.2"/>
+        <path d="M4 -52 V24" stroke="#2a2522" stroke-width="3" opacity=".15" stroke-linecap="round"/>
+        <!-- the fist as one shape (thumb included); only inner lines on top -->
+        <path class="ink skin" d="M-18 19 Q-24 4 -21 -10 Q-20 -21 -8 -21 L4 -20.5 Q10 -19.5 9 -14 Q14 -12 13 -8 Q16 -4.5 12.5 -1.5 Q16 2.5 12.5 6 Q15.5 10 11.5 13.5 Q13 20 5 21 Q-8 23.5 -18 19 Z" stroke-width="4.5"/>
+        <path class="thin nf" d="M-13 -8 Q-3 -14 9 -14" stroke-width="2.8"/>
+        <path class="thin nf" d="M-1 -2 Q6 -1 12.5 -1.5 M-1 4.5 Q6 5.5 12.5 6 M0 11 Q6 12.5 11.5 13.5" stroke-width="2.4"/>
+        <path class="shade" d="M-18 8 Q-16 16 -8 18.5 Q2 19.5 8 18 Q0 21.5 -12 20 Q-18 17 -18 8 Z"/>
+</g></g>
+</g>
+</svg>

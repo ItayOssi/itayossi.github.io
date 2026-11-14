@@ -7,7 +7,8 @@
 <meta name="google-site-verification" content="34Uqi-BGIYuT6Eo6AaODWrDzTInWrtraLQZCwFf8PG4" />
 <title>SumIT · כל הלימודים במקום אחד</title>
 <meta name="description" content="SumIT היא אפליקציה לסטודנטים ב-HIT ל-Windows ול-macOS: מחברת את Moodle, Zoom ו-CS24, ובונה לכל הרצאה סיכום עם שיעורי הבית.">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="sumi/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="sumi/icon-256.png">
 <link rel="stylesheet" href="site.css">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
@@ -54,7 +55,7 @@
   .mock-body { display: grid; grid-template-columns: 1fr 118px; min-height: 300px; }
   .mock-side { border-inline-start: 1px solid var(--line); padding: 14px 10px; display: flex; flex-direction: column; gap: 8px; background: color-mix(in srgb, var(--accent-soft) 50%, transparent); }
   .mock-side span { height: 9px; border-radius: 5px; background: var(--line); } .mock-side span.on { background: var(--accent); width: 80%; }
-  .mock-side .tk { margin-top: auto; padding: 8px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); font-size: 10.5px; line-height: 1.35; color: var(--muted); }
+  .mock-side .tk { margin-top: 10px; padding: 8px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); font-size: 10.5px; line-height: 1.35; color: var(--muted); }
   .mock-side .tk b { display: flex; align-items: center; justify-content: space-between; color: var(--text); font-size: 11px; }
   .mock-side .tk b em { font-style: normal; min-width: 17px; height: 17px; border-radius: 9px; background: var(--gold); color: #3a2400; display: grid; place-items: center; font-size: 10px; }
   .mock-main { padding: 18px; }
@@ -70,6 +71,11 @@
   .chip-float.c2 { bottom: -20px; right: 28px; animation: float 8s .4s ease-in-out infinite; }
   .chip-float i { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: var(--gold-soft); }
   .mock-wrap { position: relative; }
+  /* Sumi, the mascot */
+  .sumi-hero { position: absolute; left: -96px; bottom: -46px; width: 196px; z-index: 2; filter: drop-shadow(0 14px 18px rgba(16, 40, 90, .22)); pointer-events: none; }
+  .head-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
+  .head-row .sumi { width: 150px; margin-bottom: 18px; }
+  .head-row .sumi.cheer { width: 160px; }
 
   /* sections */
   section.band { padding: 64px 0 20px; scroll-margin-top: 70px; }
@@ -140,6 +146,8 @@
     .hero2 { grid-template-columns: 1fr; gap: 36px; padding-top: 32px; }
     .steps, .platforms { grid-template-columns: 1fr; }
     .steps { gap: 24px; }
+    .sumi-hero { left: -14px; bottom: -40px; width: 150px; }
+    .head-row .sumi { width: 116px; }
     .top nav a:not(.cta) { display: none; }
   }
   @media (max-width: 520px) {
@@ -147,13 +155,17 @@
     .cmp th, .cmp td { padding: 10px; } .cmp td:not(:first-child), .cmp th:not(:first-child) { width: 64px; }
     .dl { width: 100%; justify-content: center; }
     .privacy-band { flex-direction: column; text-align: center; }
+    .sumi-hero { width: 104px; left: -4px; bottom: -96px; }
+    .mock-wrap { margin-bottom: 70px; }
+    .chip-float.c2 { right: 12px; }
+    .head-row { grid-template-columns: 1fr; } .head-row .sumi { display: none; }
   }
 </style>
 </head>
 <body>
 <div class="topbar" id="top"><div class="wrap wide">
   <header class="top">
-    <img class="mark-img" src="logo.svg" alt="" width="38" height="38"><b>SumIT</b>
+    <img class="mark-img" src="sumi/avatar.svg" alt="" width="38" height="38"><b>SumIT</b>
     <nav><a href="#how">איך זה עובד</a><a href="#features">מה יש בה</a><a href="#compare">Mac מול Windows</a><a href="privacy.html">פרטיות</a><a class="cta" href="#download">הורדה</a></nav>
   </header>
 </div></div>
@@ -198,14 +210,17 @@
       </div>
       <div class="chip-float c1"><i>🔔</i>מחר: הגשת תרגיל 4</div>
       <div class="chip-float c2"><i>☁️</i>נשמר ב-Google Drive</div>
+      <img class="sumi-hero" src="sumi/sumi-hello.svg" alt="" width="196" height="256">
     </div>
   </section>
 
   <!-- how -->
   <section class="band" id="how">
+    <div class="head-row"><div>
     <p class="eyebrow reveal">איך זה עובד</p>
     <h2 class="big reveal">שלושה צעדים, ואתה מוכן להגשה.</h2>
     <p class="sub reveal">בלי להעתיק קבצים ידנית ובלי לחפש בין עשרות לשוניות.</p>
+    </div><img class="sumi reveal" src="sumi/sumi-think.svg" alt="" width="150" height="196"></div>
     <div class="steps">
       <div class="step reveal"><h3>מתחברים פעם אחת</h3><p>ל-Moodle עם המשתמש של HIT, ולמנוע AI שכבר יש לך: Claude, ‏Gemini או ChatGPT. מספיק אחד.</p></div>
       <div class="step reveal"><h3>בוחרים הרצאה</h3><p>המצגות, התרגילים וההקלטות נכנסים לתיקייה מסודרת לכל הרצאה, מ-Moodle, מ-CS24 או מהמחשב.</p></div>
@@ -233,9 +248,11 @@
 
   <!-- downloads -->
   <section class="band" id="download">
+    <div class="head-row"><div>
     <p class="eyebrow reveal">הורדה</p>
     <h2 class="big reveal">בחר את המחשב שלך.</h2>
     <p class="sub reveal">שתי הגרסאות חינמיות ומתעדכנות מתוך האפליקציה. הקבצים מגיעים ישירות מ-GitHub.</p>
+    </div><img class="sumi cheer reveal" src="sumi/sumi-celebrate.svg" alt="" width="160" height="209"></div>
     <div class="platforms">
       <div class="plat reveal" data-plat="mac">
         <span class="mine-tag">המחשב שלך</span>

@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Sumi, the SumIT mascot">
+<style>
+.ink  { stroke: #2a2522; stroke-width: 5.5; stroke-linejoin: round; stroke-linecap: round; }
+    .thin { stroke: #2a2522; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+    .nf   { fill: none; }
+    .shade { fill: #2a2522; opacity: .14; }
+    .skin { fill: #f6d8b4; }
+
+
+</style>
+<defs>
+    <!-- old-print grain over the colours -->
+    <filter id="paper" filterUnits="userSpaceOnUse" x="0" y="0" width="260" height="340">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 .17  0 0 0 0 .14  0 0 0 0 .12  0 0 0 1.3 -.86" result="g"/>
+      <feComposite in="g" in2="SourceGraphic" operator="in" result="grain"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="grain"/></feMerge>
+    </filter>
+    <clipPath id="headClip"><path d="M78 112 Q78 54 130 54 Q182 54 182 114 Q182 150 160 166 Q130 182 100 166 Q78 150 78 112 Z"/></clipPath>
+    <clipPath id="gownClip"><path d="M96 182 Q86 226 84 276 Q130 286 176 276 Q174 226 164 182 Z"/></clipPath>
+  <clipPath id="tile"><circle cx="150" cy="150" r="150"/></clipPath></defs>
+<g clip-path="url(#tile)">
+  <rect width="300" height="300" fill="#17305c"/>
+  <circle cx="150" cy="176" r="124" fill="#3d73b8"/>
+  <path class="rays" d="M150 176L410.0 176.0L406.1 221.1ZM150 176L394.3 264.9L375.2 306.0ZM150 176L349.2 343.1L317.1 375.2ZM150 176L280.0 401.2L238.9 420.3ZM150 176L195.1 432.1L150.0 436.0ZM150 176L104.9 432.1L61.1 420.3ZM150 176L20.0 401.2L-17.1 375.2ZM150 176L-49.2 343.1L-75.2 306.0ZM150 176L-94.3 264.9L-106.1 221.1ZM150 176L-110.0 176.0L-106.1 130.9ZM150 176L-94.3 87.1L-75.2 46.0ZM150 176L-49.2 8.9L-17.1 -23.2ZM150 176L20.0 -49.2L61.1 -68.3ZM150 176L104.9 -80.1L150.0 -84.0ZM150 176L195.1 -80.1L238.9 -68.3ZM150 176L280.0 -49.2L317.1 -23.2ZM150 176L349.2 8.9L375.2 46.0ZM150 176L394.3 87.1L406.1 130.9Z" fill="#f6efdc" opacity=".07"/>
+  <g class="float1"><g transform="translate(52 96) rotate(-18)"><path class="thin" d="M0 9 Q-8 5 -17 6 V-7 Q-8 -8 0 -2 Z" fill="#f6efdc" stroke-width="2.6"/><path class="thin" d="M0 9 Q8 5 17 6 V-7 Q8 -8 0 -2 Z" fill="#e6d9bb" stroke-width="2.6"/><path d="M-12 -1 Q-6 -2 -3 1 M-12 3 Q-6 2 -3 5" stroke="#b8a888" stroke-width="1.4" fill="none" stroke-linecap="round"/></g></g><g class="float2"><g transform="translate(262 252) rotate(14)"><path class="thin" d="M0 9 Q-8 5 -17 6 V-7 Q-8 -8 0 -2 Z" fill="#f6efdc" stroke-width="2.6"/><path class="thin" d="M0 9 Q8 5 17 6 V-7 Q8 -8 0 -2 Z" fill="#e6d9bb" stroke-width="2.6"/><path d="M-12 -1 Q-6 -2 -3 1 M-12 3 Q-6 2 -3 5" stroke="#b8a888" stroke-width="1.4" fill="none" stroke-linecap="round"/></g></g><g class="float2"><g transform="translate(46 214) rotate(10)"><path class="thin" d="M0 9 Q-8 5 -17 6 V-7 Q-8 -8 0 -2 Z" fill="#f6efdc" stroke-width="2.6"/><path class="thin" d="M0 9 Q8 5 17 6 V-7 Q8 -8 0 -2 Z" fill="#e6d9bb" stroke-width="2.6"/><path d="M-12 -1 Q-6 -2 -3 1 M-12 3 Q-6 2 -3 5" stroke="#b8a888" stroke-width="1.4" fill="none" stroke-linecap="round"/></g></g>
+  <path class="twinkle" d="M84 43L86.66 47.34L91 50L86.66 52.66L84 57L81.34 52.66L77 50L81.34 47.34Z" fill="#e6bd64" stroke="#2a2522" stroke-width="2" stroke-linejoin="round"/><path class="twinkle d2" d="M258 114L260.28 117.72L264 120L260.28 122.28L258 126L255.72 122.28L252 120L255.72 117.72Z" fill="#e6bd64" stroke="#2a2522" stroke-width="2" stroke-linejoin="round"/><path class="twinkle" d="M232 257L233.9 260.1L237 262L233.9 263.9L232 267L230.1 263.9L227 262L230.1 260.1Z" fill="#e6bd64" stroke="#2a2522" stroke-width="2" stroke-linejoin="round"/><path class="twinkle d2" d="M36 149.5L37.71 152.29L40.5 154L37.71 155.71L36 158.5L34.29 155.71L31.5 154L34.29 152.29Z" fill="#e6bd64" stroke="#2a2522" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(-77 -46) scale(1.75)"><g class="sway" filter="url(#paper)">
+<!-- trousers, one leg cocked out -->
+    <path class="ink" d="M110 262 L106 316 L126 316 L130 264 Z" fill="#4f5361"/>
+    <path class="ink" d="M130 264 L146 313 L166 309 L152 262 Z" fill="#4f5361"/>
+    <path class="shade" d="M120 266 L118 314 L125 314 L129 266 Z"/>
+    <path class="shade" d="M146 266 L158 311 L164 310 L151 265 Z"/>
+    <!-- two-tone shoes -->
+    <path class="ink" d="M88 328 Q88 313 106 312 L126 312 Q132 320 129 328 Z" fill="#f0e6cf"/>
+    <path class="ink" d="M88 328 Q88 314 102 313 L106 328 Z" fill="#2a2522" stroke-width="3.5"/>
+    <path class="ink" d="M143 325 Q140 315 146 310 L164 306 Q186 305 188 320 L188 323 Z" fill="#f0e6cf"/>
+    <path class="ink" d="M173 306 Q188 306 188 321 L179 323 Z" fill="#2a2522" stroke-width="3.5"/>
+    <path d="M110 318 Q116 316 122 318 M152 314 Q158 311 164 312" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".8"/>
+
+    <!-- the gown, cut slim and knee-length -->
+    <path class="ink" d="M96 182 Q86 226 84 276 Q130 286 176 276 Q174 226 164 182 Z" fill="#5c80b0"/>
+    <g clip-path="url(#gownClip)">
+      <path class="shade" d="M150 180 L180 180 L180 290 L156 290 Q160 230 150 180 Z"/>
+    </g>
+    <!-- pinstripe suit, shirt and tie -->
+    <path class="ink" d="M110 178 L150 178 Q156 220 156 268 Q130 274 104 268 Q104 220 110 178 Z" fill="#5a5f6e"/>
+    <path d="M116 206 L114 266 M123 214 L122 270 M137 214 L138 270 M144 206 L146 266" stroke="#7a8094" stroke-width="1.6" stroke-linecap="round"/>
+    <path class="shade" d="M116 214 L130 226 L144 214 L146 232 Q130 240 114 232 Z"/>
+    <path class="ink" d="M116 176 L130 204 L144 176 Z" fill="#f0e6cf" stroke-width="4"/>
+    <path class="thin" d="M125 182 L135 182 L138 206 L130 216 L122 206 Z" fill="#cc6358"/>
+    <path d="M124 190 L136 186 M123 198 L137 193 M123 205 L137 200" stroke="#e6bd64" stroke-width="2" stroke-linecap="round"/>
+    <path class="thin" d="M125 182 L135 182 L133 175 L127 175 Z" fill="#cc6358"/>
+    <path class="thin nf" d="M110 178 L124 218 L130 214 M150 178 L136 218 L130 214"/>
+    <circle cx="130" cy="236" r="2.8" fill="#2a2522"/>
+    <circle cx="130" cy="252" r="2.8" fill="#2a2522"/>
+    <!-- gown fronts with the gold stole on their edges -->
+    <path class="ink" d="M96 182 Q88 226 86 276 L106 278 Q104 226 114 180 Z" fill="#5c80b0"/>
+    <path class="ink" d="M164 182 Q172 226 174 276 L154 278 Q156 226 146 180 Z" fill="#5c80b0"/>
+    <path class="shade" d="M166 190 Q172 230 172 274 L164 276 Q166 230 160 188 Z"/>
+    <path d="M113 182 Q104 228 106 276" stroke="#2a2522" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M113 182 Q104 228 106 276" stroke="#e6bd64" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+    <path d="M147 182 Q156 228 154 276" stroke="#2a2522" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M147 182 Q156 228 154 276" stroke="#e6bd64" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+    <path d="M149 190 Q156 230 155 272" stroke="#c49a45" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- the SumIT spark pinned on the stole -->
+    <path d="M153 212l2.6 6.2 6.2 2.6-6.2 2.6-2.6 6.2-2.6-6.2-6.2-2.6 6.2-2.6z" fill="#f6efdc" stroke="#2a2522" stroke-width="2.2" stroke-linejoin="round"/>
+
+    <!-- arm bent at the elbow, fist on the hip -->
+    <path d="M100 192 L70 220 L90 240" stroke="#2a2522" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M100 192 L70 220 L90 240" stroke="#5c80b0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M92 196 L72 214" stroke="#7a9cc8" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M74 226 L88 238" stroke="#4a6c9c" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M76 202 L86 211 M71 208 L81 217" stroke="#e6bd64" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- shirt cuff -->
+    <path class="thin" d="M86 230 L94 228 L96 248 L88 249 Z" fill="#f0e6cf"/>
+    <!-- the fist on the hip as one shape (thumb included) -->
+    <path class="ink skin" d="M93 254 Q89 242 93 231 Q96 223 106 222 Q116 222 117 228 Q121 230 121 235.5 Q124 239.5 120.5 243 Q124 247 120 250.5 Q120 256 112 257 Q102 259 93 254 Z" stroke-width="4.5"/>
+    <path class="thin nf" d="M99 234 Q108 228 117 228.5" stroke-width="2.8"/>
+    <path class="thin nf" d="M113 241 Q117 242.5 120.5 243 M113 248 Q117 249.5 120 250.5" stroke-width="2.4"/>
+    <path class="shade" d="M96 249 Q104 254 114 253.5 Q106 257 98 254 Z"/>
+
+    <g class="head"><!-- neck -->
+    <path class="ink skin" d="M116 158 L116 176 Q130 182 144 176 L144 158" stroke-width="4.5"/>
+    <path class="shade" d="M117 160 L143 160 L143 170 Q130 166 117 172 Z"/>
+
+    <!-- ears -->
+    <circle class="ink skin" cx="77" cy="120" r="12" stroke-width="4.5"/>
+    <circle class="ink skin" cx="183" cy="120" r="12" stroke-width="4.5"/>
+    <path class="thin nf" d="M74 116 Q80 120 75 126 M186 116 Q180 120 185 126"/>
+
+    <!-- head with a strong cartoon chin -->
+    <path class="ink skin" d="M78 112 Q78 54 130 54 Q182 54 182 114 Q182 150 160 166 Q130 182 100 166 Q78 150 78 112 Z"/>
+    <g clip-path="url(#headClip)">
+      <path class="shade" d="M158 66 Q184 86 184 114 Q184 152 160 168 Q146 176 132 180 Q164 158 168 124 Q171 94 158 66 Z"/>
+      <path class="shade" d="M70 98 Q130 74 190 96 L190 104 Q130 84 70 108 Z"/>
+    </g>
+
+    <!-- slicked hair under the cap -->
+    <path class="ink" d="M80 106 Q78 66 104 62 L158 62 Q182 68 181 102 Q176 86 160 80 Q140 74 122 82 Q106 78 94 86 Q84 92 80 106 Z" fill="#a0583a"/>
+    <path class="thin" d="M100 82 Q86 94 96 104 Q94 94 108 88 Z" fill="#a0583a"/>
+    <path d="M114 72 Q132 66 154 72" stroke="#c47c55" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M164 80 Q176 86 179 98" stroke="#7e4429" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+    <!-- the cap, tilted at a cocky angle -->
+    <g transform="translate(0 -12) rotate(-9 130 70)">
+      <path class="ink" d="M96 70 L96 86 Q130 100 164 86 L164 70 Z" fill="#3b4258"/>
+      <path class="ink" d="M66 64 L130 42 L194 64 L130 86 Z" fill="#475070"/>
+      <path d="M130 86 L194 64 L186 61 L130 80 Z" fill="#2a2522" opacity=".22"/>
+      <path d="M80 64 L130 47 L180 64" stroke="#626b8a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle class="thin" cx="130" cy="64" r="4.5" fill="#e6bd64"/>
+      <path d="M130 64 L188 66" stroke="#e6bd64" stroke-width="3.8" stroke-linecap="round"/>
+      <g class="tassel">
+        <path d="M188 66 L190 90" stroke="#e6bd64" stroke-width="3.8" stroke-linecap="round"/>
+        <path class="thin" d="M184 88 L196 88 L199 106 Q190 110 181 106 Z" fill="#e6bd64"/>
+        <path d="M186 96 L185 104 M190 96 L190 106 M194 96 L195 104" stroke="#b48a38" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- brows: one flat, one raised in a smug arch -->
+    <path class="ink nf" d="M94 102 Q106 97 120 102" stroke-width="6"/>
+    <g class="brow"><path class="ink nf" d="M142 96 Q155 83 168 96" stroke-width="6"/></g>
+
+    <!-- half-lidded, self-satisfied eyes -->
+    <g transform="translate(0 4)"><g class="eyes">
+      <ellipse class="thin" cx="107" cy="114" rx="10" ry="12" fill="#f6efdc" stroke-width="3.5"/>
+      <ellipse class="thin" cx="154" cy="112" rx="10" ry="13" fill="#f6efdc" stroke-width="3.5"/>
+      <circle cx="111" cy="117" r="5" fill="#2a2522"/>
+      <circle cx="158" cy="115" r="5.4" fill="#2a2522"/>
+      <circle cx="112.6" cy="115.2" r="1.6" fill="#fff"/>
+      <circle cx="159.8" cy="113" r="1.7" fill="#fff"/>
+      <path class="skin" d="M95 113 Q107 105 119 113 L119 100 L95 100 Z"/>
+      <path class="ink nf" d="M96 113 Q107 106 118 113" stroke-width="4"/>
+      <path class="skin" d="M143 108 Q154 101 165 108 L165 97 L143 97 Z"/>
+      <path class="ink nf" d="M144 108 Q154 102 164 108" stroke-width="4"/>
+    </g></g>
+
+    <!-- nose -->
+    <path class="ink nf" d="M130 118 Q142 128 131 134" stroke-width="4"/>
+    <!-- lopsided grin with all the teeth -->
+    <path class="ink" d="M106 144 Q130 160 160 138 Q156 158 132 160 Q114 160 106 144 Z" fill="#f6efdc" stroke-width="4"/>
+    <path d="M110 149 Q132 157 157 145" stroke="#2a2522" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path class="thin nf" d="M160 138 Q167 136 167 130"/>
+    <!-- the gleam off the teeth -->
+    <path class="gleam" d="M150 140l2.4 5.6 5.6 2.4-5.6 2.4-2.4 5.6-2.4-5.6-5.6-2.4 5.6-2.4z" fill="#fff" stroke="#e6bd64" stroke-width="1.5"/>
+
+    </g>
+<!-- arm held out, presenting the rolled diploma -->
+    <g class="scroll">
+      <path d="M160 194 L196 212 L210 172" stroke="#2a2522" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M160 194 L196 212 L210 172" stroke="#5c80b0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M166 202 L194 216" stroke="#4a6c9c" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <path d="M201 202 L207 184" stroke="#7a9cc8" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M176 196 L180 206 M184 200 L188 210" stroke="#e6bd64" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- shirt cuff -->
+      <path d="M201 175 L216 180" stroke="#2a2522" stroke-width="11" stroke-linecap="round"/>
+      <path d="M201 175 L216 180" stroke="#f0e6cf" stroke-width="5" stroke-linecap="round"/>
+      <g transform="translate(226 152) rotate(12)">
+        <!-- the scroll, standing up in the fist -->
+        <rect class="ink" x="-8.5" y="-64" width="17" height="94" rx="8.5" fill="#f3e6c4" stroke-width="4"/>
+        <ellipse class="thin" cx="0" cy="-60" rx="8.5" ry="4.5" fill="#e3d2a6"/>
+        <rect x="-8.5" y="-42" width="17" height="7" fill="#cc6358"/>
+        <path class="thin nf" d="M-8.5 -42 H8.5 M-8.5 -35 H8.5" stroke-width="2.2"/>
+        <path d="M4 -52 V24" stroke="#2a2522" stroke-width="3" opacity=".15" stroke-linecap="round"/>
+        <!-- the fist as one shape (thumb included); only inner lines on top -->
+        <path class="ink skin" d="M-18 19 Q-24 4 -21 -10 Q-20 -21 -8 -21 L4 -20.5 Q10 -19.5 9 -14 Q14 -12 13 -8 Q16 -4.5 12.5 -1.5 Q16 2.5 12.5 6 Q15.5 10 11.5 13.5 Q13 20 5 21 Q-8 23.5 -18 19 Z" stroke-width="4.5"/>
+        <path class="thin nf" d="M-13 -8 Q-3 -14 9 -14" stroke-width="2.8"/>
+        <path class="thin nf" d="M-1 -2 Q6 -1 12.5 -1.5 M-1 4.5 Q6 5.5 12.5 6 M0 11 Q6 12.5 11.5 13.5" stroke-width="2.4"/>
+        <path class="shade" d="M-18 8 Q-16 16 -8 18.5 Q2 19.5 8 18 Q0 21.5 -12 20 Q-18 17 -18 8 Z"/>
+      </g>
+    </g>
+</g></g>
+</g>
+<circle cx="150" cy="150" r="148" fill="none" stroke="#2a2522" stroke-width="4" opacity=".55"/>
+</svg>
