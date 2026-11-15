@@ -9,6 +9,9 @@
 <meta name="description" content="SumIT היא אפליקציה לסטודנטים בכל המוסדות האקדמיים בישראל, ל-Windows ול-macOS: מחברת את Moodle, Zoom ו-CS24, ובונה לכל הרצאה סיכום עם שיעורי הבית.">
 <link rel="icon" href="sumi/avatar.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="sumi/icon-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="site.css">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
@@ -202,13 +205,114 @@
     .chip-float.c2 { right: 12px; }
     .head-row { grid-template-columns: 1fr; } .head-row .sumi { display: none; }
   }
+
+  /* ---------- refined layer: a premium Hebrew type (Heebo) and quiet, minimal windows and icons; the colors stay the app's ---------- */
+  :root { --hair: color-mix(in srgb, var(--text) 10%, transparent); --soft-shadow: 0 40px 90px -50px rgba(16, 40, 90, .38); }
+  @media (prefers-color-scheme: dark) { :root { --hair: color-mix(in srgb, var(--text) 11%, transparent); --soft-shadow: 0 40px 90px -50px rgba(0, 0, 0, .75); } }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  .topbar.scrolled { border-bottom-color: var(--hair); }
+  .top b { font-weight: 700; letter-spacing: -.02em; font-size: 20px; }
+  .top nav { gap: 26px; align-items: center; }
+  .top nav a { font-weight: 400; transition: color .2s; }
+  .top .cta { border-radius: 99px; padding: 8px 20px; font-weight: 500; }
+  .mark-img { box-shadow: none; }
+
+  /* hero */
+  .pill { background: transparent; border-color: var(--hair); font-weight: 400; padding: 7px 14px; }
+  .hero2 { gap: 64px; padding: 72px 0 56px; }
+  .hero2 h1 { font-size: clamp(40px, 6.2vw, 76px); line-height: 1.04; font-weight: 700; letter-spacing: -.035em; margin: 22px 0 22px; }
+  .hero2 .lead { font-weight: 300; font-size: clamp(18px, 1.5vw, 20.5px); line-height: 1.7; }
+  .dl { border-radius: 99px; border: 1px solid var(--hair); box-shadow: none; font-weight: 500; padding: 13px 26px 13px 28px; }
+  .dl:hover { box-shadow: 0 16px 34px -20px rgba(16, 40, 90, .5); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+  .dl.primary { box-shadow: 0 16px 36px -18px var(--accent); }
+  .dl small { font-weight: 300; }
+  .hero-note { font-weight: 300; }
+
+  /* the windows: a hairline, a large radius, a soft long shadow, quiet dots */
+  .mock, .idw { border: 1px solid var(--hair); border-radius: 28px; box-shadow: var(--soft-shadow); }
+  .mock-bar { border-bottom-color: var(--hair); padding: 14px 18px; gap: 7px; }
+  .mock-bar i, .mock-bar i:nth-child(2), .mock-bar i:nth-child(3) { width: 9px; height: 9px; background: var(--hair); }
+  .mock-side { border-inline-start-color: var(--hair); background: transparent; }
+  .mock-side .tk, .q { border-radius: 14px; }
+  .mock-side .tk { border-color: var(--hair); }
+  .chip-float { border: 1px solid var(--hair); border-radius: 99px; padding: 9px 16px 9px 12px; font-weight: 500; background: color-mix(in srgb, var(--card) 82%, transparent);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: var(--soft-shadow); }
+  .chip-float i { width: 28px; height: 28px; border-radius: 50%; background: transparent; border: 1px solid var(--hair); color: var(--accent); }
+  .chip-float i svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* sections */
+  section.band { padding: 104px 0 20px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; font-size: 13px; letter-spacing: .14em; margin-bottom: 14px; }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+  h2.big { font-size: clamp(30px, 4.4vw, 52px); line-height: 1.08; font-weight: 700; letter-spacing: -.03em; margin-bottom: 16px; }
+  .sub { font-weight: 300; font-size: 18px; line-height: 1.7; margin-bottom: 44px; }
+
+  .step, .feat, .plat, .fact, .faq details, .cmp, .doc, .ic, details.how { border: 1px solid var(--hair); }
+  .step { border-radius: 26px; padding: 30px 28px 28px; background: transparent; }
+  .step::before { position: static; display: block; width: auto; height: auto; margin-bottom: 18px; background: none; box-shadow: none; border-radius: 0;
+    content: "0" counter(s); font-size: 46px; font-weight: 200; line-height: 1; letter-spacing: -.04em; color: var(--accent); }
+  .step h3 { font-weight: 600; font-size: 19px; letter-spacing: -.01em; } .step p { font-weight: 300; }
+
+  .feats { gap: 16px; }
+  .feat { border-radius: 24px; padding: 26px; background: transparent; transition: border-color .3s, background .3s; }
+  .feat:hover { transform: none; border-color: color-mix(in srgb, var(--accent) 45%, transparent); background: var(--card); }
+  .ico { width: 46px; height: 46px; border-radius: 50%; background: transparent; border: 1px solid var(--hair); margin-bottom: 18px; }
+  .ico svg { width: 21px; height: 21px; stroke-width: 1.35; }
+  .feat h3 { font-weight: 600; font-size: 17px; letter-spacing: -.01em; } .feat p { font-weight: 300; }
+  .tag { font-weight: 500; background: transparent; border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent); }
+
+  .plat { border-radius: 30px; padding: 32px; }
+  .plat.mine { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-2) 12%, transparent), var(--soft-shadow); }
+  .plat .mine-tag { font-weight: 500; }
+  .plat-head .os { border-radius: 50%; background: transparent; border: 1px solid var(--hair); }
+  .plat-head .os svg { width: 24px; height: 24px; }
+  .plat-head h3 { font-weight: 700; letter-spacing: -.02em; }
+  .ver span { background: transparent; border: 1px solid var(--hair); font-weight: 400; }
+  .ver span:empty { display: none; }
+  .plat ul { font-weight: 300; }
+  details.how { border-radius: 18px; background: transparent; }
+  details.how summary { font-weight: 500; }
+  .cmd { direction: ltr; display: block; margin: 6px 0; padding: 9px 14px; border-radius: 12px; border: 1px solid var(--hair); background: var(--bg); font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+  .cmp { border-radius: 26px; }
+  .cmp th { background: transparent; font-weight: 500; color: var(--muted); font-size: 13px; letter-spacing: .06em; }
+  .cmp th, .cmp td { border-bottom-color: var(--hair); padding: 15px 20px; }
+  .cmp td { font-weight: 300; }
+  .yes { font-weight: 400; }
+
+  .idw-search { border-radius: 99px; border-width: 1px; border-color: var(--hair); padding: 0 16px; }
+  .ic { border-width: 1px; border-radius: 18px; }
+  .idw-status { border-radius: 99px; }
+  .fact { border-radius: 24px; }
+  .fact b { font-weight: 700; letter-spacing: -.03em; font-size: 32px; }
+  .fact span { font-weight: 300; }
+  .lw { border-radius: 18px; box-shadow: 0 0 0 1px var(--hair); }
+
+  .faq details { border-radius: 22px; padding: 0 22px; }
+  .faq summary { font-weight: 500; font-size: 16.5px; display: flex; align-items: center; gap: 12px; }
+  .faq summary::after { content: ""; margin-inline-start: auto; width: 12px; height: 12px; flex: none;
+    background: linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat, linear-gradient(currentColor, currentColor) center / 1.5px 12px no-repeat; opacity: .55; transition: transform .3s; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq p { font-weight: 300; }
+
+  .privacy-band { border-radius: 30px; padding: 34px; margin-top: 96px; }
+  .privacy-band svg { stroke-width: 1.3; }
+  .privacy-band h3 { font-weight: 700; letter-spacing: -.02em; font-size: 22px; } .privacy-band p { font-weight: 300; }
+  .doc { border-radius: 26px; }
+  footer { border-top: 1px solid var(--hair); margin-top: 28px; padding-top: 24px; font-weight: 300; }
+  /* Rubik for the headings and the big numbers: a little heavier and tighter than Heebo needs */
+  .hero2 h1 { font-weight: 600; letter-spacing: -.03em; }
+  h2.big { font-weight: 600; letter-spacing: -.025em; }
+  .step::before, .fact b, .plat-head h3, .privacy-band h3 { font-family: "Rubik", "Heebo", sans-serif; }
+  .step::before { font-weight: 300; }
+  .step h3, .feat h3 { font-weight: 500; }
 </style>
 </head>
 <body>
 <div class="topbar" id="top"><div class="wrap wide">
   <header class="top">
     <img class="mark-img" src="sumi/avatar.svg" alt="" width="38" height="38"><b>SumIT</b>
-    <nav><a href="#how">איך זה עובד</a><a href="#institutions">כל המוסדות</a><a href="#features">מה יש בה</a><a href="#compare">Mac מול Windows</a><a href="privacy.html">פרטיות</a><a class="cta" href="#download">הורדה</a></nav>
+    <nav><a href="#how">איך זה עובד</a><a href="#institutions">כל המוסדות</a><a href="#features">מה יש בה</a><a href="#compare">Mac מול Windows</a><a href="privacy.html">פרטיות</a><a href="https://discord.gg/9XNk3XrsWJ" target="_blank" rel="noopener">דיסקורד</a><a class="cta" href="#download">הורדה</a></nav>
   </header>
 </div></div>
 <main class="wrap wide">
@@ -250,8 +354,8 @@
             <div class="tk"><b>מה מחכה לי <em>3</em></b>מחר: תרגיל 4</div></div>
         </div>
       </div>
-      <div class="chip-float c1"><i>🔔</i>מחר: הגשת תרגיל 4</div>
-      <div class="chip-float c2"><i>☁️</i>נשמר ב-Google Drive</div>
+      <div class="chip-float c1"><i><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></i>מחר: הגשת תרגיל 4</div>
+      <div class="chip-float c2"><i><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.6A3.3 3.3 0 0 0 7 18z"/></svg></i>נשמר ב-Google Drive</div>
       <img class="sumi-hero" src="sumi/sumi-hello.svg" alt="" width="196" height="256">
     </div>
   </section>
@@ -342,6 +446,7 @@
           <li>פותחים את קובץ ה-DMG וגוררים את <b>SumIT</b> לתיקיית <b>Applications</b>.</li>
           <li>בפתיחה הראשונה macOS עלול להזהיר שהיישום הורד מהאינטרנט: לוחצים קליק ימני על SumIT, בוחרים <b>Open</b> ומאשרים.</li>
           <li>או: <b>הגדרות מערכת ← פרטיות ואבטחה</b>, ולמטה <b>Open Anyway</b>.</li>
+          <li>אם זה לא עוזר, פעם אחת ב-Terminal:<code class="cmd">xattr -cr /Applications/SumIT.app</code></li>
         </ol></details>
       </div>
 
@@ -398,6 +503,7 @@
     <h2 class="big reveal">שאלות נפוצות.</h2>
     <div class="faq">
       <details class="reveal"><summary>המוסד שלי ברשימה?</summary><p>כמעט בטוח. ברשימה כל האוניברסיטאות וכל המכללות האקדמיות בישראל, 32 מוסדות. מוסד שעוד לא בדקנו בו כניסה אמיתית מסומן "ניסיוני", וכדאי לספר לנו <a href="https://github.com/ItayOssi/SumIT/issues">ב-GitHub</a> אם הוא עובד. יש מוסדות שפותחים Moodle חדש בכל שנה. במקרה כזה מתקנים את הכתובת בהגדרות, בכרטיס "המוסד".</p></details>
+      <details class="reveal"><summary>איפה מקבלים עזרה?</summary><p>בשרת הדיסקורד של SumIT: עזרה טכנית, דיווח על באגים ורעיונות, וכל גרסה חדשה כשהיא יוצאת. <a href="https://discord.gg/9XNk3XrsWJ" target="_blank" rel="noopener">הצטרפות לשרת</a></p></details>
       <details class="reveal"><summary>כמה זה עולה?</summary><p>SumIT חינמית. את מנוע ה-AI מחברים עם חשבון שכבר יש לך (Claude, ‏Gemini או ChatGPT), ולכן העלות, אם יש, היא של החשבון שלך שם.</p></details>
       <details class="reveal"><summary>צריך לחבר את כל מנועי ה-AI?</summary><p>לא. מספיק אחד. אם מחברים כמה, הם עוזרים ובודקים אחד את השני.</p></details>
       <details class="reveal"><summary>האם הסיכומים תמיד נכונים?</summary><p>הסיכומים נבנים על ידי AI, ויכולות להיות בהם טעויות. תבדוק אותם מול החומר של הקורס ומול המרצה.</p></details>
@@ -417,7 +523,7 @@
     <p><b>Google sign-in.</b> On macOS, students may sign in with Google to keep their study folder, tasks and profile in a "SumIT" folder of their own Google Drive and get them back on another computer. SumIT asks only for the <code>drive.file</code> scope (the files it creates) and the account's name, email and picture. It has no server of its own: data moves only between the student's computer and Google. See the <a href="privacy.html#en">Privacy Policy</a> and the <a href="terms.html#en">Terms of Service</a>.</p>
   </div>
 
-  <footer><span>SumIT · כל הלימודים במקום אחד</span><a href="privacy.html">מדיניות פרטיות · Privacy</a><a href="terms.html">תנאי שימוש · Terms</a><a href="https://github.com/ItayOssi/SumIT/issues">יצירת קשר · Contact</a></footer>
+  <footer><span>SumIT · כל הלימודים במקום אחד</span><a href="privacy.html">מדיניות פרטיות · Privacy</a><a href="terms.html">תנאי שימוש · Terms</a><a href="https://discord.gg/9XNk3XrsWJ" target="_blank" rel="noopener">דיסקורד · Contact</a></footer>
 </main>
 
 <script src="js/institutions.js"></script>
