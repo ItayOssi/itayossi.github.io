@@ -9,9 +9,6 @@
 <meta name="description" content="SumIT היא אפליקציה לסטודנטים בכל המוסדות האקדמיים בישראל, ל-Windows ול-macOS: מחברת את Moodle, Zoom ו-CS24, ובונה לכל הרצאה סיכום עם שיעורי הבית.">
 <link rel="icon" href="sumi/avatar.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="sumi/icon-256.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="site.css">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
@@ -307,12 +304,63 @@
   .step::before { font-weight: 300; }
   .step h3, .feat h3 { font-weight: 500; }
 </style>
+<style id="sumit-2">
+  /* ===== SumIT 2.0 ===== The look of the app: navy with gold and cyan, Rubik, one line in a gradient, round buttons with
+     gold for the main one, Fluent emojis, and the screens tour. */
+  :root { --gold: #f2b632; --cyan: #22b8f0; --grad: linear-gradient(90deg, #22b8f0, #7dd3fc 45%, #f2b632); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0a1830; --card: #11274c; --line: rgba(120, 160, 230, .2); --accent: #3b82f6; --accent-2: #22b8f0; } }
+  body { font-family: "Rubik", "Heebo", -apple-system, BlinkMacSystemFont, "SF Hebrew", Arial, sans-serif; }
+  .hero2 h1 { font-weight: 800; letter-spacing: -.035em; }
+  .hero2 h1 em, h2.big em.grad { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h2.big { font-weight: 800; }
+  .eyebrow { color: var(--gold); font-weight: 600; }
+  @media (prefers-color-scheme: light) { .eyebrow { color: #b7791f; } }
+  .dl.primary { background: linear-gradient(135deg, #ffd166, #f2b632); border-color: transparent; color: #1b1300; box-shadow: 0 16px 36px -16px rgba(242, 182, 50, .7); }
+  .dl.primary:hover { border-color: transparent; filter: brightness(1.05); }
+  .new-pill { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 12px; margin-bottom: 10px; border-radius: 99px; text-decoration: none; color: var(--text);
+    background: linear-gradient(var(--bg), var(--bg)) padding-box, var(--grad) border-box; border: 1.5px solid transparent; font-size: 13.5px; }
+  .new-pill b { font-weight: 700; } .new-pill span { color: var(--muted); }
+  .new-pill:hover { box-shadow: 0 10px 26px -14px var(--cyan); }
+  .hero2 > div:first-of-type { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero2 > div:first-of-type > .pill { align-self: flex-start; }
+  .feat .ico img { width: 26px; height: 26px; }
+  .mock .q .ok { color: #b7791f; } @media (prefers-color-scheme: dark) { .mock .q .ok { color: var(--gold); } }
+
+  /* the screens tour */
+  .tour { margin-top: 30px; }
+  .tour-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 22px; }
+  .tour-tabs button { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 99px; border: 1px solid var(--hair, var(--line)); background: transparent;
+    color: var(--muted); font: 500 14.5px "Rubik", sans-serif; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .2s; }
+  .tour-tabs button img { width: 20px; height: 20px; }
+  .tour-tabs button:hover { color: var(--text); transform: translateY(-1px); }
+  .tour-tabs button[aria-selected="true"] { color: #fff; border-color: transparent; background: linear-gradient(135deg, #3b82f6, #22b8f0); box-shadow: 0 10px 24px -12px #22b8f0; }
+  .tour-stage { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: center; }
+  .tour-window { border-radius: 22px; overflow: hidden; background: #0a1830; border: 1px solid var(--line); box-shadow: var(--soft-shadow, var(--shadow)); }
+  .tour-shots { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+  .tour-shots figure { position: absolute; inset: 0; margin: 0; opacity: 0; transform: translateX(var(--from, -40px)) scale(.985); transition: opacity .55s ease, transform .6s cubic-bezier(.2, .8, .2, 1); pointer-events: none; }
+  .tour-shots figure.on { opacity: 1; transform: none; pointer-events: auto; }
+  .tour-shots figure > img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .tour-shots figure.pair { display: flex; justify-content: center; gap: 22px; padding: 18px; background: radial-gradient(60% 70% at 50% 40%, rgba(34, 184, 240, .18), transparent), #0a1830; }
+  .tour-shots figure.pair img { height: 100%; width: auto; border-radius: 16px; box-shadow: 0 20px 40px -18px rgba(0, 0, 0, .7); }
+  .tour-caption { position: relative; min-height: 210px; }
+  .tour-caption > div { position: absolute; inset: 0; opacity: 0; transform: translateY(10px); transition: opacity .45s ease, transform .5s cubic-bezier(.2, .8, .2, 1); }
+  .tour-caption > div.on { position: relative; opacity: 1; transform: none; }
+  .tour-caption h3 { font-size: 26px; font-weight: 800; letter-spacing: -.02em; margin: 0 0 10px; line-height: 1.2; }
+  .tour-caption p { color: var(--muted); font-size: 16.5px; line-height: 1.7; margin: 0; font-weight: 300; }
+  .tour-dots { display: flex; gap: 6px; margin-top: 18px; }
+  .tour-dots i { height: 5px; flex: 1; border-radius: 99px; background: var(--line); overflow: hidden; }
+  .tour-dots i.on::after { content: ""; display: block; height: 100%; background: var(--grad); animation: tourFill var(--tour-ms, 6s) linear both; }
+  .tour.paused .tour-dots i.on::after { animation: none; width: 100%; }
+  @keyframes tourFill { from { width: 0; } to { width: 100%; } }
+  @media (max-width: 860px) { .tour-stage { grid-template-columns: 1fr; } .tour-caption { min-height: 160px; } }
+  @media (prefers-reduced-motion: reduce) { .tour-shots figure, .tour-caption > div { transition: none; } }
+</style>
 </head>
 <body>
 <div class="topbar" id="top"><div class="wrap wide">
   <header class="top">
     <img class="mark-img" src="sumi/avatar.svg" alt="" width="38" height="38"><b>SumIT</b>
-    <nav><a href="#how">איך זה עובד</a><a href="#institutions">כל המוסדות</a><a href="#features">מה יש בה</a><a href="#compare">Mac מול Windows</a><a href="privacy.html">פרטיות</a><a href="https://discord.gg/9XNk3XrsWJ" target="_blank" rel="noopener">דיסקורד</a><a class="cta" href="#download">הורדה</a></nav>
+    <nav><a href="#how">איך זה עובד</a><a href="#tour">ככה זה נראה</a><a href="#institutions">כל המוסדות</a><a href="#features">מה יש בה</a><a href="#compare">Mac מול Windows</a><a href="privacy.html">פרטיות</a><a href="https://discord.gg/9XNk3XrsWJ" target="_blank" rel="noopener">דיסקורד</a><a class="cta" href="#download">הורדה</a></nav>
   </header>
 </div></div>
 <main class="wrap wide">
@@ -321,6 +369,7 @@
   <section class="hero2">
     <span class="blob a" aria-hidden="true"></span><span class="blob b" aria-hidden="true"></span>
     <div>
+      <a class="new-pill reveal" href="#tour"><img src="emoji/sparkles.svg" alt="" width="18" height="18"><b>חדש: SumIT 2.0</b><span>עיצוב חדש לכל האפליקציה</span></a>
       <span class="pill reveal"><i aria-hidden="true"></i>חינם · ל-Windows ול-macOS · לכל המוסדות האקדמיים בישראל</span>
       <h1 class="reveal">אחרי כל הרצאה, <em>סיכום מלא עם שיעורי הבית.</em></h1>
       <p class="lead reveal">SumIT מחברת את Moodle, ‏Zoom ו-CS24 למקום אחד. בוחרים הרצאה, והיא בונה סיכום מסודר שמסביר גם איך לפתור את התרגילים, לפי איך שהמרצה שלך חושב.</p>
@@ -374,6 +423,49 @@
     </div>
   </section>
 
+  <!-- tour: real screens from the app, SumIT 2.0 -->
+  <section class="band" id="tour">
+    <div class="head-row"><div>
+    <p class="eyebrow reveal">ככה זה נראה</p>
+    <h2 class="big reveal">SumIT 2.0, <em class="grad">מסך אחרי מסך.</em></h2>
+    <p class="sub reveal">צילומים אמיתיים מתוך האפליקציה. בוחרים מסך, וקוראים בשתי שורות מה הוא עושה.</p>
+    </div><img class="sumi reveal" src="sumi/sumi-celebrate.svg" alt="" width="150" height="196"></div>
+    <div class="tour reveal">
+      <div class="tour-tabs" role="tablist" aria-label="מסכים באפליקציה">
+        <button role="tab" aria-selected="true" data-shot="0"><img src="emoji/target.svg" alt="">מסך הבית</button>
+        <button role="tab" aria-selected="false" data-shot="1"><img src="emoji/book.svg" alt="">דף הקורס</button>
+        <button role="tab" aria-selected="false" data-shot="2"><img src="emoji/memo.svg" alt="">הסיכום</button>
+        <button role="tab" aria-selected="false" data-shot="3"><img src="emoji/bulb.svg" alt="">בוחן וכרטיסים</button>
+        <button role="tab" aria-selected="false" data-shot="4"><img src="emoji/fire.svg" alt="">מסלול למידה</button>
+        <button role="tab" aria-selected="false" data-shot="5"><img src="emoji/pencil.svg" alt="">המטלות</button>
+        <button role="tab" aria-selected="false" data-shot="6"><img src="emoji/cap.svg" alt="">בחירת המוסד</button>
+      </div>
+      <div class="tour-stage">
+        <div class="tour-window">
+          <div class="mock-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="tour-shots">
+            <figure class="on"><img src="shots/home.jpg" alt="מסך הבית של SumIT" loading="lazy" width="1440" height="900"></figure>
+            <figure><img src="shots/course-top.jpg" alt="דף קורס עם כרטיסי הרצאות" loading="lazy" width="1440" height="900"></figure>
+            <figure><img src="shots/summary.jpg" alt="סיכום של הרצאה" loading="lazy" width="1280" height="1150"></figure>
+            <figure class="pair"><img src="shots/quiz.jpg" alt="בוחן" loading="lazy" width="384" height="852"><img src="shots/flashcards.jpg" alt="כרטיסי זיכרון" loading="lazy" width="384" height="852"></figure>
+            <figure><img src="shots/track.jpg" alt="מסלול הלמידה" loading="lazy" width="1440" height="900"></figure>
+            <figure><img src="shots/tasks.jpg" alt="המטלות שלי" loading="lazy" width="1440" height="900"></figure>
+            <figure><img src="shots/wizard.jpg" alt="בחירת המוסד באשף הפתיחה" loading="lazy" width="1440" height="900"></figure>
+          </div>
+        </div>
+        <div class="tour-caption" aria-live="polite">
+          <div class="on"><h3>מה הכי חשוב עכשיו</h3><p>פותחים את SumIT ורואים בשורה אחת מה דחוף: המבחן הקרוב או המטלה הבאה. מתחת, המשימות של היום, מה מחכה לך, המערכת והקורסים, בחלוניות.</p></div>
+          <div><h3>כל קורס במבט אחד</h3><p>כמה ימים נשארו למבחן וכמה הרצאות כבר מסוכמות. כל הרצאה היא כרטיס עם המצב שלה, ו"הכי חשוב עכשיו" מראה מה לסכם הבא.</p></div>
+          <div><h3>סיכום שמלמד לפתור</h3><p>השאלה המלאה מהתרגיל, מה צריך לדעת כדי לפתור אותה, רמז, ופתרון מוסבר שמקופל עד שצריך אותו. במצב בהיר או כהה.</p></div>
+          <div><h3>בוחן וכרטיסים מכל סיכום <span class="tag">Mac</span></h3><p>שאלות אמריקאיות, נכון/לא נכון והשלמה, שנבדקות במחשב בלי AI. וכרטיסי זיכרון שחוזרים בדיוק כשאתה עומד לשכוח.</p></div>
+          <div><h3>שבוע שמתאים לך <span class="tag">Mac</span></h3><p>אשף קצר שואל על השגרה שלך ובונה שבוע של בלוקים לימוד: הקורסים הכבדים בשעות של הכי הרבה כוח. ורצף ימים, כמו ב-Duolingo.</p></div>
+          <div><h3>שום הגשה לא נשכחת</h3><p>מטלות מ-Moodle ומטלות שהוספת, לפי מה שעבר, השבוע ובהמשך. המטלה הקרובה תמיד בראש העמוד.</p></div>
+          <div><h3>לכל מוסד בישראל</h3><p>בפתיחה הראשונה בוחרים את המוסד, ו-SumIT מתחברת ל-Moodle ולפורטל שלו. באפליקציה כל מוסד מופיע עם הלוגו שלו.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- every institution -->
   <section class="band" id="institutions">
     <div class="head-row"><div>
@@ -414,6 +506,7 @@
       <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 11l2 2 4-4"/><path d="M5 4h14v16H5z"/></svg></div><h3>המטלות שלי</h3><p>הגשות מ-Moodle ומטלות שהוספת, עם מערכת השעות ולוח המבחנים.</p></div>
       <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div><h3>מה מחכה לי <span class="tag">Mac</span></h3><p>כל המטלות לפי דחיפות, בכל מסך, ותזכורת יום לפני ההגשה.</p></div>
       <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.6A3.3 3.3 0 0 0 7 18z"/></svg></div><h3>שמירה ב-Google Drive <span class="tag">Mac</span></h3><p>הסיכומים, המטלות והפרופיל חוזרים בכל מחשב שמתחברים ממנו.</p></div>
+      <div class="feat reveal"><div class="ico"><img src="emoji/bulb.svg" alt=""></div><h3>בוחן ליד כל סיכום <span class="tag">Mac</span></h3><p>אמריקאי, נכון/לא נכון והשלמה, מהסיכום עצמו. אומרים כמה אתה בטוח, ובסוף מקבלים ציון ומה כדאי לחזור עליו.</p></div>
       <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4z"/><path d="M8 4h8v3"/></svg></div><h3>כרטיסים וחזרה מרווחת <span class="tag">Mac</span></h3><p>כרטיסי זיכרון מהסיכום, שחוזרים בדיוק כשעומדים לשכוח.</p></div>
       <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M4.6 6.6l2 2M17.4 15.4l2 2M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.5"/></svg></div><h3>"אני תקוע" ומסלול למידה <span class="tag">Mac</span></h3><p>צעדים קטנים כשלא יודעים מאיפה להתחיל, ותוכנית שבועית עם רצף יומי.</p></div>
       <div class="feat reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 3-3 6 5"/><path d="M3 4v16h18"/></svg></div><h3>המחשה חזותית <span class="tag">Mac</span></h3><p>גרף, מעגל חשמלי או שדה תלת-ממדי לשאלה מהתרגיל, בלחיצה.</p></div>
@@ -490,6 +583,7 @@
         <tr><td>"מה מחכה לי" ותזכורת יום לפני</td><td class="yes">✓</td><td class="no">—</td></tr>
         <tr><td>שמירה וסנכרון ב-Google Drive</td><td class="yes">✓</td><td class="no">—</td></tr>
         <tr><td>כרטיסי זיכרון וחזרה מרווחת</td><td class="yes">✓</td><td class="no">—</td></tr>
+        <tr><td>בוחן ליד כל סיכום</td><td class="yes">✓</td><td class="no">—</td></tr>
         <tr><td>"אני תקוע" ומסלול למידה</td><td class="yes">✓</td><td class="no">—</td></tr>
         <tr><td>המחשה חזותית לשאלות</td><td class="yes">✓</td><td class="no">—</td></tr>
         <tr><td>יומנים, פומודורו וייצוא ל-Anki ול-NotebookLM</td><td class="yes">✓</td><td class="no">—</td></tr>
@@ -654,6 +748,37 @@
     if (zip) { set('win-size', 'ZIP · ' + fmtSize(zip.size)); document.querySelectorAll('[data-dl="win"]').forEach(a => a.href = zip.browser_download_url); }
     document.querySelectorAll('[data-ver="win"]').forEach(e => e.textContent = 'גרסה ' + ver + ' · Windows 10/11');
   }).catch(() => { });
+</script>
+<script>
+/* SumIT 2.0: the screens tour. A tab shows its screen (it slides in from the side of the tab that was chosen) and its two
+   lines; the screens move on by themselves every few seconds until the visitor picks one, and stop for less motion. */
+(function () {
+  var tour = document.querySelector('.tour'); if (!tour) return;
+  var tabs = [].slice.call(tour.querySelectorAll('.tour-tabs button')), shots = [].slice.call(tour.querySelectorAll('.tour-shots figure')),
+      caps = [].slice.call(tour.querySelectorAll('.tour-caption > div')), cur = 0, timer = 0, MS = 6000;
+  var dots = document.createElement('div'); dots.className = 'tour-dots'; dots.setAttribute('aria-hidden', 'true');
+  tabs.forEach(function () { dots.appendChild(document.createElement('i')); }); tour.querySelector('.tour-caption').after(dots);
+  tour.style.setProperty('--tour-ms', MS + 'ms');
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(n, user) {
+    if (n === cur && !user) return;
+    var from = n > cur ? '-40px' : '40px';   // RTL: a later tab sits to the left, so its screen comes from the left
+    shots.forEach(function (f, i) { f.style.setProperty('--from', i === n ? from : (n > cur ? '40px' : '-40px')); f.classList.toggle('on', i === n); });
+    caps.forEach(function (c, i) { c.classList.toggle('on', i === n); });
+    tabs.forEach(function (t, i) { t.setAttribute('aria-selected', String(i === n)); t.tabIndex = i === n ? 0 : -1; });
+    [].forEach.call(dots.children, function (d, i) { d.classList.toggle('on', i === n); d.replaceWith(d); });
+    var on = dots.children[n]; if (on) { on.classList.remove('on'); void on.offsetWidth; on.classList.add('on'); }
+    cur = n;
+  }
+  function auto() { clearInterval(timer); if (still || tour.classList.contains('paused')) return; timer = setInterval(function () { go((cur + 1) % tabs.length); }, MS); }
+  tabs.forEach(function (t, i) { t.onclick = function () { tour.classList.add('paused'); clearInterval(timer); go(i, true); }; });
+  tour.querySelector('.tour-tabs').addEventListener('keydown', function (e) {
+    var d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0; if (!d) return;
+    var n = (cur + d + tabs.length) % tabs.length; tabs[n].click(); tabs[n].focus(); e.preventDefault();
+  });
+  if (still) tour.classList.add('paused');
+  go(0, true); auto();
+})();
 </script>
 </body>
 </html>
